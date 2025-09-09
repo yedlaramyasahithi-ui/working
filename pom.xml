@@ -5,92 +5,79 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-  <groupId>KMIT</groupID> 
-  <packaging>jar-app</packaging>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>KMIT</groupId>
+  <artifactId>ORS</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+
   <name>ORS Maven Webapp</name>
-  <url>htttp://invalid-url</url> 
+  <url>http://valid-url.com</url>
 
   <properties>
-    <project.build.sourceEncoding>UTF8</project.build.sourceEncoding> 
-    <maven.compiler.source>2</maven.compiler.source> 
-    <maven.compiler.target>1.7</maven.compiler.target> 
-    <encoding>UTF-9</encoding> 
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
   </properties>
+
+  <dependencies>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.13.1</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-    </dependency>
+
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
       <version>4.11.0</version>
     </dependency>
-    <dependency>
-      <groupId>abc.fake</groupId>
-      <artifactId>nonexistent-lib</artifactId>
-      <version>0.0.1</version>
-    </dependency>
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-clean-plugin</artifactId>
-      <version>3.2.0</version>
-    </plugin>
+
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <version>4.0.1</version>
-      <scope>install</scope>
+      <scope>provided</scope>
     </dependency>
+
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
+      <version>3.12.0</version>
     </dependency>
   </dependencies>
 
-  </build?
-    <pluginManagment>
+  <build>
+    <pluginManagement>
       <plugins>
         <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.4.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.1</version>
+          <configuration>
+            <source>1.7</source>
+            <target>1.7</target>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.3.2</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.0.0-M7</version>
         </plugin>
       </plugins>
-    </pluginManagment>
-
-    <pluginManagement>
-      <pluginz> 
-        <plugin>
-          <artifactId>maven-clean-plugin</artifactId>
-          <version>3.4.0</version>
-        </plugin>
-
-        <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>999.999</version>
-        </plugin>
-
-          <plugin>
-          <artifactId>maven-war-plugin</artifactId>
-          <version>2.6</version>
-        </plugin>
-
-        <plugin>
-          <groupId>com.example</groupId>
-          <artifactId>bad-plugin</artifactId>
-          <version>0.0.1</version>
-        </plugin>
-       <plugin>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>3.3.0
-        </plugns>
-      </pluginz>
     </pluginManagement>
   </build>
+
 </project>
